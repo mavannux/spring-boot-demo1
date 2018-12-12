@@ -2,6 +2,7 @@ package com.test.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +33,7 @@ public class DemoService {
         return res;
     }
 
+    @Transactional
     public DemoDto addDemo(DemoDto demoDto) {
         DemoEntity demoEntity = new DemoEntity();
         demoEntity.setId(demoDto.getId());
