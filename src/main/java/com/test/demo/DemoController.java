@@ -1,5 +1,9 @@
 package com.test.demo;
 
+import java.util.List;
+
+import com.test.demo.dto.DemoDto;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,13 +21,13 @@ public class DemoController {
     private final Logger _log = LoggerFactory.getLogger(DemoController.class);
 
     @RequestMapping("/demo")
-    public Iterable<DemoEntity> getAll() {
-        return _demoService.getDemoEntities();
+    public List<DemoDto> getAll() {
+        return _demoService.getDemos();
     }
 
     @RequestMapping(method= RequestMethod.POST, value="/demo")
-    public DemoEntity addDemoEntity(@RequestBody DemoEntity demoEntity) {
-        return _demoService.addDemoEntity(demoEntity);
+    public DemoDto addDemoEntity(@RequestBody DemoDto demoDto) {
+        return _demoService.addDemo(demoDto);
     }
 
 }

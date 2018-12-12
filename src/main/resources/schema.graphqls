@@ -1,0 +1,41 @@
+# https://www.graphql-java.com/documentation/v10/schema/
+# schema {
+#     query: QueryType
+# }
+
+#type QueryType {
+type Query {
+    demo(id : String!) : Demo
+    allDemo(count: Int, offset: Int): [Demo]
+}
+
+type Demo {
+    id: ID!
+    name: String!
+}
+
+type Mutation {
+    createDemo(demo: DemoInput!): Demo
+}
+
+input DemoInput {
+  id: String
+  name: String
+}
+
+
+# Sample:
+# query A {
+#   demo(id: "1") {id name}
+  
+#   allDemo {
+#     id name
+#   }
+# }
+
+# mutation {
+#   createDemo(demo: {id: "2", name: "sdfgsdfg"} ) {
+#     id
+#     name
+#   }
+# }

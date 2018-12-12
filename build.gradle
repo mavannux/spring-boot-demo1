@@ -29,5 +29,15 @@ dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-web')
 	//runtimeOnly('mysql:mysql-connector-java')
 	runtime("org.hsqldb:hsqldb")
+
+	//compile ("com.graphql-java:graphql-spring-boot-starter")
+    compile("com.graphql-java:graphql-spring-boot-starter:5.0.2")
+
+	//compile ("com.graphql-java:graphql-java-tools")
+	compile("com.graphql-java:graphql-java-tools:5.2.4")
+
+	// graphiql
+	runtime ("com.graphql-java:graphiql-spring-boot-starter:5.0.2")
+
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
